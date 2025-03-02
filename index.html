@@ -10,12 +10,12 @@
 <body id="main-body" class="bg-[#a0aac7] py-4">
     <!-- Header section -->
     <header class="max-w-7xl mx-auto bg-white p-6 rounded-xl mb-10">
-        <nav class="flex justify-between">
-            <div class="nav-left flex items-center gap-2">
+        <nav class="sm:flex sm:justify-between">
+            <div class="nav-left flex items-center justify-center gap-2">
                 <img src="./assets/logo.png" alt=""> 
                 <h3 class="text-3xl">Dev<span class="font-bold">Board</span></h3>
             </div>
-            <div class="nav-right flex gap-4 items-center">
+            <div class="nav-right flex gap-4 items-center justify-between">
                 <div class="flex gap-1 bg-[#F4F7FF] p-2 rounded-full">
                     <img src="./assets/checkbox.png" alt="">
                     <h4 id="menu-number">23</h4>
@@ -28,11 +28,11 @@
     </header>
 
     <!-- Main SEction -->
-    <section class="max-w-7xl mx-auto p-6 rounded-xl grid grid-cols-4 gap-4">
+    <section class="max-w-7xl mx-auto p-6 rounded-xl sm:grid grid-cols-1 sm:grid-cols-4 gap-4">
         
         <div class="bg-white col-span-3 p-4 rounded-xl">
              <!-- row-1 -->
-            <div class="grid grid-cols-4 gap-2 mb-6">
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 mb-6">
                 <div class="bg-[#F4F7FF] p-4 rounded-xl flex gap-2 items-center">
                     <div class="bg-white p-3 rounded-full">
                         <img src="./assets/checkbox.png" alt="">
@@ -58,7 +58,7 @@
             </div>
 
             <!-- Row 2 -->
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <!-- card one -->
                 <div class="task-div bg-[#F4F7FF] p-4 rounded-lg">
                     <h2 class="text-lg bg-white rounded-xl p-4 w-28 text-center">ShopEase</h2>
