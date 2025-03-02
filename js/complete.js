@@ -1,8 +1,15 @@
 
 const allButton = document.querySelectorAll('.complete-button')
+let clickCount = 0;
 for(let button of allButton){
-    button.addEventListener('click', function(){
-        alert("chomolikko..parsos tui re")
+    button.addEventListener('click', function(event){
+        clickCount++;
+        if(clickCount < 6){
+            alert('first');
+        }else if(clickCount === 6){
+            alert('first');
+            alert('second');
+        }
         button.setAttribute('disabled', true);
         button.style.opacity = '0.3';
         button.style.color = 'black';
@@ -12,30 +19,31 @@ for(let button of allButton){
         const menuNumber = document.getElementById('menu-number');
         let menuNumberElement = menuNumber.innerText;
         let convertedMenuNumberElement = parseInt(menuNumberElement);
-        if(convertedMenuNumberElement > 0){
+        if(convertedMenuNumberElement > 1){
             convertedMenuNumberElement++ ;
             menuNumber.innerText = convertedMenuNumberElement;
-        }else{
-            alert('all over')
         }
-
+        
         // assigned-number decrement
         const assignedNumber = document.getElementById('assigned-number');
         let assignedNumberElement = parseInt(assignedNumber.innerText);
-        
         if(assignedNumberElement > 0){
             assignedNumberElement-- ;
-            assignedNumber.innerText = assignedNumberElement
-        }else{
-            alert('new')
+            assignedNumber.innerText = assignedNumberElement;
         }
 
 
         // new element append in history
-        const clearHistoryDiv = document.getElementById('clear-history-div')
-        const p = document.createElement('p');
-        p.innerText = "wow done it man.";
-        clearHistoryDiv.appendChild(p);
+
+        const clearHistoryDiv = document.getElementById('clear-history-div')  // get div
+        const currentTime = new Date().toLocaleTimeString();    // get current time
+        const parentSection = this.closest(".task-div")     // get the parent div 
+        const dynamicTitle = parentSection.querySelector(".dynamic-title").innerText;   // select the tile inside parent div.
+        const p = document.createElement('p');      // creat new element
+        p.innerText = `You have added a task ${dynamicTitle} at ${currentTime}`     // set innertext
+        clearHistoryDiv.appendChild(p);     // append child
+        
+        
     })
 }
 
