@@ -5,10 +5,10 @@ for(let button of allButton){
     button.addEventListener('click', function(event){
         clickCount++;
         if(clickCount < 6){
-            alert('first');
+            alert('Board updated successfully');
         }else if(clickCount === 6){
-            alert('first');
-            alert('second');
+            alert('Board updated successfully');
+            alert('Congratulations! you have completed all the current task.');
         }
         button.setAttribute('disabled', true);
         button.style.opacity = '0.3';
@@ -40,7 +40,12 @@ for(let button of allButton){
         const parentSection = this.closest(".task-div")     // get the parent div 
         const dynamicTitle = parentSection.querySelector(".dynamic-title").innerText;   // select the tile inside parent div.
         const p = document.createElement('p');      // creat new element
-        p.innerText = `You have added a task ${dynamicTitle} at ${currentTime}`     // set innertext
+        p.innerText = `You have completed the task ${dynamicTitle} at ${currentTime}`     // set innertext
+        p.style.fontWeight = "bold";
+        p.style.backgroundColor = '#f5f5f5'
+        p.style.padding = '8px'
+        p.style.borderRadius = '8px'
+        p.style.marginBottom = '8px'
         clearHistoryDiv.appendChild(p);     // append child
         
         
